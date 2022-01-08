@@ -1,8 +1,8 @@
 {
   "id": "8608c690-a833-11e7-a937-ebb9e5076155",
-  "name": "DeploySsrs",
-  "friendlyName": "Deploy MS SQL SSRS Reports",
-  "description": "Deploy items on MS SQL SSRS server based on a configuration file.",
+  "name": "DeploySsrs plus PBIx",
+  "friendlyName": "Deploy MS SQL SSRS Reports and PowerBI Reports",
+  "description": "Deploy items on MS SQL SSRS/Power BI server based on a configuration file.",
   "author": "Mario Majcica",
   "helpMarkDown": "",
   "category": "Deploy",
@@ -17,7 +17,7 @@
     "Patch": "12"
   },
   "minimumAgentVersion": "1.95.0",
-  "instanceNameFormat": "Deploy reports",
+  "instanceNameFormat": "Deploy reports/PowerBI reports",
   "groups": [
     {
         "displayName": "Server",
@@ -39,6 +39,28 @@
       "defaultValue": "http://your.server/ReportServer/ReportService2010.asmx",
       "required": true,
       "helpMarkDown": "The Report Server Web service ReportService2010 endpoint URL"
+    },
+    {
+      "groupName": "server",
+      "name": "restUrl",
+      "type": "string",
+      "label": "Power BI Server REST endpoint URL",
+      "defaultValue": "https://your.server/Reports",
+      "required": true,
+      "helpMarkDown": "The Report Server Power BI REST endpoint URL"
+    },
+    {
+      "groupName": "server",
+      "name": "ApiVersion",
+      "type": "pickList",
+      "label": "REST API Version",
+      "required": true,
+      "defaultValue": "v2_0",
+      "options": {          
+          "v1_0": "v1.0",
+          "v2_0": "v2.0"
+      },
+      "helpMarkDown": "Specify the version of REST Endpoint to use. - v1.0 of REST Endpoint is not supported by Microsoft and is for SSRS 2016. - v2.0 of REST Endpoint is supported by Microsoft and is for SSRS 2017, PBIRS October 2017 and newer releases."
     },
     {
       "groupName": "server",

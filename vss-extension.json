@@ -4,7 +4,7 @@
   "name": "Deploy SSRS",
   "version": "1.0.7",
   "publisher": "mmajcica",
-  "description": "Deploy SSRS packages",
+  "description": "Deploy SSRS/PBIX packages",
   "public": false,
   "galleryFlags": [
     "Public"
@@ -22,7 +22,10 @@
     "Reports",
     "SSRS",
     "SQL",
-    "rdl"
+    "rdl",
+    "Power BI Report Server",
+    "Power BI report",
+    "pbix"
   ],
   "links": {
     "home": {
